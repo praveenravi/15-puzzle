@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5">
+      <style type="text/css">
+      	.numberblock {
+      		background: #A5B0F2;
+		color: #D20C2D;
+		font-size: 24px;
+		height: 40px;
+		text-align: center;
+		width: 40px;
+      	}
+      	
+      	.free {
+      		background: #ffffff;
+      	}
+      </style>
+      
+      <script type="text/javascript">
+      
+      	window.onkeydown = keydown;
+      	
+      	function keydown(e) {
+      		
+      		freeBlock = document.querySelector('.free').id;
+      		freeBlock = parseInt(freeBlock);
+      		//console.log()
+      		if(e.keyCode === 39) {
+      			previousBlock = freeBlock + 1;
+      			console.log(freeBlock+" "+previousBlock);
+      			if((previousBlock != 0) & (previousBlock != 5) && (previousBlock != 9) && (previousBlock != 13)) // last block
+  			{
+  				// empty previous block
+  				previousBlockValue = document.getElementById(previousBlock).innerHTML;
+	      			document.getElementById(previousBlock).innerHTML = '';
+	      			
+	      			// insert value to free block
+	      			document.getElementById(freeBlock).innerHTML = previousBlockValue;
+	      			
+	      			// swap classes
+	      			document.getElementById(freeBlock).className = 'numberblock';
+	      			document.getElementById(previousBlock).className = 'numberblock free';
+  			}    			
+      		}
+      		
+      		if(e.keyCode === 37) {
+      			previousBlock = freeBlock - 1;
+      			previousBlock = parseInt(previousBlock);
+      			console.log(freeBlock+" "+previousBlock);
+      			if((previousBlock != 0) && (previousBlock != 4) && (previousBlock != 8) && (previousBlock != 12) && (previousBlock != 16))  // last block
+  			{
+  				// empty previous block
+  				previousBlockValue = document.getElementById(previousBlock).innerHTML;
+	      			document.getElementById(previousBlock).innerHTML = '';
+	      			
+	      			// insert value to free block
+	      			document.getElementById(freeBlock).innerHTML = previousBlockValue;
+	      			
+	      			// swap classes
+	      			document.getElementById(freeBlock).className = 'numberblock';
+	      			document.getElementById(previousBlock).className = 'numberblock free';
+  			}    			
+      		}
+      		
+      		if(e.keyCode === 40) {
+      			previousBlock = freeBlock + 4;
+      			previousBlock = parseInt(previousBlock);
+      			console.log(freeBlock+" "+previousBlock);
+      			if(previousBlock <= 16) // last block
+  			{
+  				// empty previous block
+  				previousBlockValue = document.getElementById(previousBlock).innerHTML;
+	      			document.getElementById(previousBlock).innerHTML = '';
+	      			
+	      			// insert value to free block
+	      			document.getElementById(freeBlock).innerHTML = previousBlockValue;
+	      			
+	      			// swap classes
+	      			document.getElementById(freeBlock).className = 'numberblock';
+	      			document.getElementById(previousBlock).className = 'numberblock free';
+  			}    			
+      		}
+      		
+      		if(e.keyCode === 38) {
+      			previousBlock = freeBlock - 4;
+      			previousBlock = parseInt(previousBlock);
+      			console.log(freeBlock+" "+previousBlock);
+      			if(previousBlock != 0) // last block
+  			{
+  				// empty previous block
+  				previousBlockValue = document.getElementById(previousBlock).innerHTML;
+	      			document.getElementById(previousBlock).innerHTML = '';
+	      			
+	      			// insert value to free block
+	      			document.getElementById(freeBlock).innerHTML = previousBlockValue;
+	      			
+	      			// swap classes
+	      			document.getElementById(freeBlock).className = 'numberblock';
+	      			document.getElementById(previousBlock).className = 'numberblock free';
+  			}    			
+      		}
+      		
+      	}
+      
+      </script>
+      
+      
+      	<div id="centerBox">
+      		<table border="1" >
+      			<tr>
+      				<td> <div id="1" class="numberblock">1</div> </td>
+      				<td> <div id="2" class="numberblock">2</div> </td>
+      				<td> <div id="3" class="numberblock">3</div> </td>
+      				<td> <div id="4" class="numberblock free"></div>  </td>
+      				
+      			</tr>
+      			
+      			<tr>
+      				<td> <div id="5" class="numberblock">4</div> </td>
+      				<td> <div id="6" class="numberblock">5</div> </td>
+      				<td> <div id="7" class="numberblock">6</div> </td>
+      				<td> <div id="8" class="numberblock">7</div>  </td>
+      				
+      			</tr>
+      			
+      			<tr>
+      				<td> <div id="9" class="numberblock">8</div> </td>
+      				<td> <div id="10" class="numberblock">9</div> </td>
+      				<td> <div id="11" class="numberblock">10</div> </td>
+      				<td> <div id="12" class="numberblock">11</div>  </td>
+      				
+      			</tr>
+      			<tr>
+      				<td> <div id="13" class="numberblock">12</div> </td>
+      				<td> <div id="14" class="numberblock">13</div> </td>
+      				<td> <div id="15" class="numberblock">14</div> </td>
+      				<td> <div id="16" class="numberblock">15</div>  </td>
+      				
+      			</tr>
+      			
+      		</table>
+      	</div>
+      
+    </div>
+</div>
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>
